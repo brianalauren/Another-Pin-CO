@@ -9,7 +9,7 @@ ActiveAdmin.register Product do
     selectable_column
     index_column
     column "Main Image" do |product|
-      # image_tag product.image_1.thumb, width: "40"
+      image_tag product.image_1.thumb.url, width: "40"
     end
     column :title
     column :price

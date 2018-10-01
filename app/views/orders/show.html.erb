@@ -1,0 +1,13 @@
+<h2> Thanks for your order </h2>
+
+<p> Your order has been recieved </p>
+<p><%= link_to "Back to home", root_path %></p>
+
+ <%= @order.first_name %>
+ <%= @order.city %>
+
+ <% @order.order_items.each do |item| %>
+
+ <%= item.product.title %>
+
+ <% end %>

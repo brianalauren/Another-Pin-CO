@@ -13,6 +13,11 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'country_select', '~> 3.1'
+
+
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -54,7 +59,7 @@ gem "fog-aws"
 gem 'devise'
 gem 'activeadmin'
 
-
+gem 'stripe'
 
 
 

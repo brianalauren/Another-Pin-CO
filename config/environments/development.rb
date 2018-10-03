@@ -14,7 +14,7 @@ Rails.application.configure do
 
 
 
-# config.read_encrypted_credentials = true
+config.read_encrypted_credentials = true
 
 
 

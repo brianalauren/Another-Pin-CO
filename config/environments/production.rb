@@ -17,7 +17,6 @@ Rails.application.configure do
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
-
   config.read_encrypted_credentials = true
 
   # Disable serving static files from the `/public` folder by default since
@@ -93,4 +92,20 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 587,
+    domain:               'anotherpinco.com',
+    user_name:            Rails.application.credentials.sendgrid_username,
+    password:             Rails.application.credentials.sendgrid_password,
+    authentication:       'plain',
+    enable_starttls_auto: true }
+
+
+
+
+
+
 end

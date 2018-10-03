@@ -18,6 +18,8 @@ Rails.application.configure do
     'Cache-Control' => "public, max-age=#{1.hour.to_i}"
   }
 
+  config.read_encrypted_credentials = true
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -43,4 +45,15 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 587,
+    domain:               'anotherpinco.com',
+    user_name:            Rails.application.credentials.sendgrid_username,
+    password:             Rails.application.credentials.sendgrid_password,
+    authentication:       'plain',
+    enable_starttls_auto: true }
+
 end
